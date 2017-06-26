@@ -1,0 +1,1166 @@
+@charset "UTF-8";
+
+@import
+url('https://fonts.googleapis.com/css?family=Raleway:300,400,700,900');
+
+img {
+  max-width: 100%;
+}
+/* CSS Reset */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.row:before,.row:after {content:""; clear: both; display: block;}
+
+/* Body */
+
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+
+/*  in viewpor desktop*//*  in viewpor desktop*//*  in viewpor desktop*/
+@media screen and (min-width: 991px) {
+
+
+    .col_1 {width: 8.33%;}
+    .col_2 {width: 16.66%;}
+    .col_3 {width: 25%;}
+    .col_4 {width: 33.33%;}
+    .col_5 {width: 41.66%;}
+    .col_6 {width: 50%;}
+    .col_7 {width: 58.33%;}
+    .col_8 {width: 66.66%;}
+    .col_9 {width: 75%;}
+    .col_10 {width: 83.33%;}
+    .col_11 {width: 91.66%;}
+    .col_12 {width: 100%;}
+
+    [class*="col_"]:first-child {margin-left: 0;}
+    [class*="col_"]:last-child {margin-right: 0;}
+
+    [class*="col_"] {float:left;}
+
+
+
+
+   /*  in menu*//*  in menu*//*  in menu*//*  in menu*/
+
+
+.containermenu {
+overflow: hidden;
+top: 0;
+  background:rgba(20, 85, 250, 0.5  );
+  position: fixed;
+  z-index: 3000;
+  padding: .1em;
+}
+
+ul {
+
+    list-style-type:none;
+    margin:0;
+    padding:0;
+    text-align: center;
+}
+
+li {
+    display:inline-block;
+    margin-right:3em;
+}
+
+li a {
+    display:block;
+    min-width:150px;
+    height:50px;
+    text-align:center;
+    color:#fff;
+    text-decoration:none;
+    line-height:40px;
+    font-weight: 700;
+
+}
+
+li:hover a {
+    background:rgba(20, 85, 250, 0.5  );
+    font-weight:900;
+    outline: 2px solid #4F8BFF;
+}
+
+li:hover ul a {
+    background::rgba(20, 85, 250, 0.5  );
+    height:50px;
+    line-height:40px;
+    outline: 2px solid #4F8BFF;
+}
+
+
+/* apresentação do menu para desktop */
+li ul {
+    display:none;
+}
+
+li ul li {
+    display:block;
+    float:none;
+}
+
+li ul li a {
+    width: auto;
+    min-width: 150px;
+    padding: 0 20px;
+}
+
+
+/* apresentação do menu em dispositivos móveis */
+.open-menu {
+
+	text-decoration: none;
+	color: #fff;
+	text-align: center;
+	padding: 10px 0;
+	display: none;
+}
+
+input[type=checkbox] {
+    display:none;
+}
+
+input[type=checkbox]:checked ~ #menu {
+    display:block;
+}
+
+/* Fotografia e Slogan */
+
+h1 {
+  font-weight: 900;
+  font-size: 5em;
+  z-index: 100;
+  margin-top: -3em;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  color:rgba(250, 185, 20, 0.9);
+  margin-left: .5em;
+}
+
+span {
+  font-weight: 400;
+  z-index: 100;
+}
+
+.primeirafoto {
+z-index: 1;
+}
+/* Fotografia e Slogan */
+
+/* SlideShow */
+
+.segundaparte {
+  margin-top: 5em;
+}
+
+.imagensslide {
+  border-radius: 25px;
+}
+
+.slides {
+    padding: 0;
+    width: 609px;
+    height: 420px;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+}
+
+.slides * {
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+.slides input { display: none; }
+
+.slide-container { display: block; }
+
+.slide {
+    top: 0;
+    opacity: 0;
+    width: 609px;
+    height: 420px;
+    display: block;
+    position: absolute;
+
+    transform: scale(0);
+
+    transition: all .7s ease-in-out;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+}
+
+.nav label {
+    width: 200px;
+    height: 100%;
+    display: none;
+    position: absolute;
+
+	  opacity: 0;
+    z-index: 9;
+    cursor: pointer;
+
+    transition: opacity .2s;
+
+    color: #FFF;
+    font-size: 156pt;
+    text-align: center;
+    line-height: 380px;
+    font-family: "Varela Round", sans-serif;
+    background-color: rgba(255, 255, 255, .3);
+    text-shadow: 0px 0px 15px rgb(119, 119, 119);
+}
+
+.slide:hover + .nav label { opacity: 0.5; }
+
+.nav label:hover { opacity: 1; }
+
+.nav .next { right: 0; }
+
+input:checked + .slide-container  .slide {
+    opacity: 1;
+
+    transform: scale(1);
+
+    transition: opacity 1s ease-in-out;
+}
+
+input:checked + .slide-container .nav label { display: block; }
+
+.nav-dots {
+	width: 100%;
+	bottom: 9px;
+	height: 11px;
+	display: block;
+	position: absolute;
+	text-align: center;
+}
+
+.nav-dots .nav-dot {
+	top: -5px;
+	width: 11px;
+	height: 11px;
+	margin: 0 4px;
+	position: relative;
+	border-radius: 100%;
+	display: inline-block;
+	background-color: rgba(0, 0, 0, 0.6);
+}
+
+.nav-dots .nav-dot:hover {
+	cursor: pointer;
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+input#img-1:checked ~ .nav-dots label#img-dot-1,
+input#img-2:checked ~ .nav-dots label#img-dot-2,
+input#img-3:checked ~ .nav-dots label#img-dot-3,
+input#img-4:checked ~ .nav-dots label#img-dot-4,
+input#img-5:checked ~ .nav-dots label#img-dot-5,
+input#img-6:checked ~ .nav-dots label#img-dot-6 {
+	background: rgba(0, 0, 0, 0.8);
+}
+
+/* SlideShow */
+
+/* Biografia */
+
+.terceiraparte  {
+  margin-top: 4em;
+  justify-content: center;
+  display: flex;
+  margin-bottom: 3em;
+}
+
+.pixapre {
+  height: 35em;
+  width: 35em;
+  float: left;
+  padding-right: 2em;
+}
+
+.pixabaixo {
+  display: none;
+}
+.texto {
+  outline: 10px ridge rgba(20, 85, 250, 0.8  );
+  margin-top: 10em;
+  width: 25em;
+  height: 26em;
+  z-index: 100;
+}
+
+h2 {
+  margin-top: -0.9em;
+  background: white;
+  z-index: 300;
+  position: absolute;
+  text-align: center;
+  font-size: 2em;
+  font-weight: 700;
+
+}
+
+.textobio {
+margin-top: .5em;
+}
+
+
+
+/* Biografia */
+
+/* Medidas de Campanha */
+
+.hideaway  {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  display: none;
+  width: 90%;
+  margin-left: 3.2em;
+}
+
+.textoprinc  {
+outline: 6px solid rgba(184, 184, 183, 0.6);
+outline-width: 1em;
+width: 100%;
+text-align: center;
+margin-bottom: 3em;
+outline-offset: 10px;
+}
+
+.campmed  {
+  height: 3em;
+  font-size:1.5em;
+  color: black;
+}
+
+.medidas  {
+  height: 2em;
+  font-weight: 900;
+  font-size: 1.5rem;
+  color: black;
+}
+
+.butaobio  {
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 25px;
+  height: 3em;
+  width: 12em;
+  margin-top: 1.5em;
+}
+
+.botaobio  {
+  text-align: center;
+  height: 5em;
+  background-color: rgba(20, 85, 250, 0.8  );
+
+}
+
+.botao  {
+  font-weight: 900;
+  font-size: 1.3em;
+  color: black;
+}
+
+/* Medidas de Campanha */
+
+/* Footer */
+
+.fundodapagina  {
+  background: white;
+  height: 3em;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.fundodapagina p {
+  margin-top: 1em;
+}
+
+
+.ismtlogo {
+  height: 2.5em;
+  width: 7em;
+  margin-left: 2em;
+  margin-right: 2em;
+}
+
+.nacio {
+  margin-left: 1em;
+  margin-top: 1em;
+}
+/* Footer */
+
+/* media query para dispositiovs móveis */
+@media screen and (max-width:760px) {
+    ul {
+        position:static;
+        display:none;
+    }
+
+    li {
+        margin-bottom:1px;
+    }
+
+    ul li, li a {
+        width:100%;
+    }
+
+    .open-menu {
+        display:block;
+}
+
+/*  out menu*//*  out menu*/
+
+.open-menu {
+	text-decoration: none;
+	color: #fff;
+	text-align: center;
+	padding: 10px 0;
+	display: none;
+}
+
+input[type=checkbox] {
+    display:none;
+}
+
+input[type=checkbox]:checked ~ #menu {
+    display:block;
+}
+
+
+}}
+/*  out viewpor desktop*//*  out viewpor desktop*//*  out viewpor desktop*/
+/*ESTE COMENTÁRIO APENAS SERVE PARA UMA QUESTÃO DE ORGANIZAÇÃO PARA FÁCIL ACESSO ÁS @MEDIA*/
+
+/*  in viewpor Tablet*//*  in viewpor Tablet*//*  in viewpor Tablet*//*  in viewpor Tablet*/
+
+@media screen and (min-width: 480px) and (max-width: 990px) {
+
+    .colt_1 {width: calc(11.1%);}
+    .colt_2 {width: calc(23.8%);}
+    .colt_3 {width: calc(36.5%);}
+    .colt_4 {width: calc(49.2%);}
+    .colt_5 {width: calc(61.9%);}
+    .colt_6 {width: calc(74.6%);}
+    .colt_7 {width: calc(87.3%);}
+    .colt_8 {width: calc(100%);}
+
+
+    [class*="colt_"]:first-child {margin-left: 0;}
+    [class*="colt_"]:last-child {margin-right: 0;}
+
+    [class*="colt_"] {float:left;}
+
+    .containermenu {
+
+      overflow: hidden;
+      top: 0;
+      background: rgba(20, 85, 250, 0.5);
+      position: fixed;
+      z-index: 3000;
+      padding: .1em;
+    }
+
+ul {
+
+    list-style-type:none;
+    margin:0;
+    padding:0;
+    text-align: center;
+}
+
+li {
+    display:inline-block;
+    margin-right:1px;
+}
+
+li a {
+    display:block;
+    min-width:150px;
+    height:50px;
+    text-align:center;
+    color:#fff;
+    text-decoration:none;
+    line-height:40px;
+    font-weight: 700;
+}
+
+li:hover a {
+    background::rgba(20, 85, 250, 0.5  );
+    font-weight:900;
+    outline: 2px solid #4F8BFF;
+}
+
+li:hover ul a {
+    background::rgba(20, 85, 250, 0.5  );
+    color:#1f190a;
+    height:50px;
+    line-height:40px;
+    outline: 2px solid #4F8BFF;
+}
+
+li:hover li a:hover {
+    background:rgba(20, 85, 250, 0.5  );
+    color:#fff;
+    outline: 2px solid #4F8BFF;
+}
+
+/* apresentação do menu para desktop */
+li ul {
+    display:none;
+}
+
+li ul li {
+    display:block;
+    float:none;
+}
+
+li ul li a {
+    width: auto;
+    min-width: 150px;
+    padding: 0 20px;
+}
+
+
+/* apresentação do menu em dispositivos móveis */
+.open-menu {
+	text-decoration: none;
+	color: #fff;
+	text-align: center;
+	padding: 10px 0;
+	display: none;
+}
+
+input[type=checkbox] {
+    display:none;
+}
+
+input[type=checkbox]:checked ~ #menu {
+    display:block;
+}
+
+/* Fotografia e Slogan */
+
+h1 {
+  font-weight: 900;
+  font-size: 3em;
+  z-index: 100;
+  margin-top: -3em;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  color:rgba(250, 185, 20, 0.9);
+  margin-left: .7em;
+}
+
+span {
+  font-weight: 400;
+  z-index: 100;
+}
+
+.primeirafoto {
+z-index: 1;
+}
+/* Fotografia e Slogan */
+
+/* SlideShow */
+
+.segundaparte {
+  margin-top: 5em;
+}
+
+.imagensslide {
+  border-radius: 25px;
+}
+
+.slides {
+    padding: 0;
+    width: 609px;
+    height: 420px;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+}
+
+.slides * {
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+.slides input { display: none; }
+
+.slide-container { display: block; }
+
+.slide {
+    top: 0;
+    opacity: 0;
+    width: 609px;
+    height: 420px;
+    display: block;
+    position: absolute;
+
+    transform: scale(0);
+
+    transition: all .7s ease-in-out;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+}
+
+.nav label {
+    width: 200px;
+    height: 100%;
+    display: none;
+    position: absolute;
+
+	  opacity: 0;
+    z-index: 9;
+    cursor: pointer;
+
+    transition: opacity .2s;
+
+    color: #FFF;
+    font-size: 156pt;
+    text-align: center;
+    line-height: 380px;
+    font-family: "Varela Round", sans-serif;
+    background-color: rgba(255, 255, 255, .3);
+    text-shadow: 0px 0px 15px rgb(119, 119, 119);
+}
+
+.slide:hover + .nav label { opacity: 0.5; }
+
+.nav label:hover { opacity: 1; }
+
+.nav .next { right: 0; }
+
+input:checked + .slide-container  .slide {
+    opacity: 1;
+
+    transform: scale(1);
+
+    transition: opacity 1s ease-in-out;
+}
+
+input:checked + .slide-container .nav label { display: block; }
+
+.nav-dots {
+	width: 100%;
+	bottom: 9px;
+	height: 11px;
+	display: block;
+	position: absolute;
+	text-align: center;
+}
+
+.nav-dots .nav-dot {
+	top: -5px;
+	width: 11px;
+	height: 11px;
+	margin: 0 4px;
+	position: relative;
+	border-radius: 100%;
+	display: inline-block;
+	background-color: rgba(0, 0, 0, 0.6);
+}
+
+.nav-dots .nav-dot:hover {
+	cursor: pointer;
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+input#img-1:checked ~ .nav-dots label#img-dot-1,
+input#img-2:checked ~ .nav-dots label#img-dot-2,
+input#img-3:checked ~ .nav-dots label#img-dot-3,
+input#img-4:checked ~ .nav-dots label#img-dot-4,
+input#img-5:checked ~ .nav-dots label#img-dot-5,
+input#img-6:checked ~ .nav-dots label#img-dot-6 {
+	background: rgba(0, 0, 0, 0.8);
+}
+
+/* SlideShow */
+
+/* Biografia */
+
+.terceiraparte  {
+  margin-top: 4em;
+  justify-content: center;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.pixapre {
+  height: 35em;
+  width: 35em;
+  float: left;
+  padding-right: 2em;
+  display: none;
+}
+
+.pixabaixo {
+  height: 25em;
+  width: 24em;
+}
+
+.texto {
+  outline: 10px ridge rgba(20, 85, 250, 0.8  );
+  margin-top: 3em;
+  width: 25em;
+  height: 18em;
+  z-index: 100;
+  float: right;
+  margin-bottom: 4em;
+}
+
+h2 {
+  margin-top: -0.9em;
+  background: white;
+  z-index: 300;
+  position: absolute;
+  text-align: center;
+  font-size: 2em;
+  font-weight: 700;
+
+}
+
+.textobio {
+margin-top: 1em;
+font-size: 2vmin;
+}
+
+
+
+/* Biografia */
+
+/* Medidas de Campanha */
+
+.hideaway  {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  display: none;
+  width: 90%;
+  margin-left: 2.4em;
+}
+
+.textoprinc  {
+outline: 6px solid rgba(184, 184, 183, 0.6);
+outline-width: 1em;
+width: 100%;
+text-align: center;
+margin-bottom: 3em;
+outline-offset: 10px;
+}
+
+.campmed  {
+  height: 3em;
+  font-size:1.2em;
+  color: black;
+}
+
+.medidas  {
+  height: 2em;
+  font-weight: 900;
+  font-size: 1.5rem;
+  color: black;
+}
+
+.butaobio  {
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 25px;
+  height: 3em;
+  width: 12em;
+  margin-top: 1.5em;
+}
+
+.botaobio  {
+  text-align: center;
+  height: 5em;
+  background-color: rgba(20, 85, 250, 0.8  );
+
+}
+
+.botao  {
+  font-weight: 900;
+  font-size: 1.3em;
+}
+
+
+/* Medidas de Campanha */
+
+/* Footer */
+
+.fundodapagina  {
+  background: white;
+  height: 3em;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.fundodapagina p {
+  margin-top: 1em;
+}
+
+
+.ismtlogo {
+  height: 1.5em;
+  width: 4em;
+  margin-right: 5em;
+  margin-left: 3em;
+  margin-top: .7em;
+}
+
+.nacio  {
+margin-right: 1em;
+margin-top: 1.2em;
+}
+/* Footer */
+
+ }
+
+/*  out viewpor Tablet*//*  out viewpor Tablet*//*  out viewpor Tablet*/
+
+/*ESTE COMENTÁRIO APENAS SERVE PARA UMA QUESTÃO DE ORGANIZAÇÃO PARA FÁCIL ACESSO ÁS @MEDIA*/
+
+/*  in viewpor Sphone*//*  in viewpor Sphone*//*  in viewpor Sphone*//*  in viewpor Sphone*/
+@media screen and (max-width: 480px) {
+
+    .colm_1 {width: calc(18.72%);}
+    .colm_2 {width: calc(39.04%);}
+    .colm_3 {width: calc(59.36%);}
+    .colm_4 {width: calc(79.68%);}
+    .colm_5 {width: calc(100%);}
+
+    [class*="colm_"]:first-child {margin-left: 0;}
+    [class*="colm_"]:last-child {margin-right: 0;}
+
+    [class*="colm_"] {float:left;}
+
+
+
+/*  in menu*//*  in menu*/
+
+/* menu*/
+.containermenu {
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 3000;
+  padding: .1em;
+  border-radius: 25px;
+  width: 9em;
+}
+
+ul {
+    list-style-type:none;
+    margin:0;
+    padding:0;
+    position:absolute;
+    margin-top: -3em;
+    width: 2em;
+}
+
+li {
+    display:inline-block;
+    float:left;
+    margin-right:1px;
+}
+
+li a {
+    display:block;
+    min-width:150px;
+    height:50px;
+    text-align:center;
+    color:#fff;
+    background:rgba(20, 85, 250, 0.6);
+    text-decoration:none;
+    line-height:40px;
+    font-weight: 700;
+}
+
+li:hover a {
+    background::rgba(20, 85, 250, 0.5  );
+    font-weight:900;
+    outline: 2px solid #4F8BFF;
+}
+
+li:hover ul a {
+    background::rgba(20, 85, 250, 0.5  );
+    color:#2f3036;
+    height:50px;
+    line-height:40px;
+    outline: 2px solid #4F8BFF;
+}
+
+li:hover li a:hover {
+    background: :rgba(20, 85, 250, 0.5 );
+    color:#050303;
+    outline: 2px solid #4F8BFF;
+}
+
+/* apresentação do menu para desktop */
+li ul {
+    display:none;
+}
+
+li ul li {
+    display:block;
+    float:none;
+}
+
+li ul li a {
+    width: auto;
+    min-width: 150px;
+    padding: 0 20px;
+}
+
+ul li a:hover + .hidden, .hidden:hover {
+    display:block;
+}
+
+/* apresentação do menu em dispositivos móveis */
+.open-menu {
+	text-decoration: none;
+	color: #fff;
+	text-align: center;
+	padding: 8px 0;
+	display: none;
+  width: 3em;
+  height: 3em;
+  border-radius: 25px;
+}
+
+input[type=checkbox] {
+    display:none;
+}
+
+input[type=checkbox]:checked ~ #menu {
+    display:block;
+}
+
+/* Fotografia e Slogan */
+
+h1 {
+  font-weight: 900;
+  font-size: 1.5em;
+  z-index: 100;
+  margin-top: -3em;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  color:rgba(250, 185, 20, 0.9);
+  margin-left: .7em;
+}
+
+span {
+  font-weight: 400;
+  z-index: 100;
+}
+
+
+.primeirafoto {
+z-index: 1;
+}
+/* Fotografia e Slogan */
+
+/* Biografia */
+
+.terceiraparte  {
+  margin-top: 4em;
+  justify-content: center;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.pixapre {
+  height: 35em;
+  width: 35em;
+  float: left;
+  padding-right: 2em;
+  display: none;
+}
+
+.pixabaixo {
+  height: 22em;
+  width: 20em;
+}
+
+.texto {
+  outline: 10px ridge rgba(20, 85, 250, 0.8  );
+  margin-top: 3em;
+  width: 19em;
+  height: 24em;
+  z-index: 100;
+  float: right;
+  margin-bottom: 4em;
+}
+
+h2 {
+  margin-top: -0.9em;
+  background: white;
+  z-index: 300;
+  position: absolute;
+  text-align: center;
+  font-size: 1.8em;
+  font-weight: 700;
+
+}
+
+.textobio {
+margin-top: 1em;
+font-size: 2vmin;
+font-size: .85em;
+}
+
+
+
+/* Biografia */
+
+/* Medidas de Campanha */
+
+.hideaway  {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  display: none;
+  width: 90%;
+  margin-left: 1em;
+}
+
+.textoprinc  {
+outline: 6px solid rgba(184, 184, 183, 0.6);
+outline-width: 1em;
+width: 100%;
+text-align: center;
+margin-bottom: 3em;
+outline-offset: 10px;
+padding-bottom: 2em;
+}
+
+.campmed  {
+  height: 3em;
+  font-size:1em;
+  color: black;
+}
+
+.medidas  {
+  height: 2em;
+  font-weight: 900;
+  font-size: 1.5rem;
+  color: black;
+}
+
+.butaobio  {
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 25px;
+  height: 3em;
+  width: 12em;
+  margin-top: 1.5em;
+}
+
+.botaobio  {
+  text-align: center;
+  height: 5em;
+  background-color: rgba(20, 85, 250, 0.8  );
+
+}
+
+.botao  {
+  font-weight: 900;
+  font-size: 1.3em;
+}
+
+
+/* Medidas de Campanha */
+
+/* Footer */
+
+.fundodapagina  {
+  background: white;
+  height: 3em;
+  text-align: center;
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.fundodapagina p {
+  margin-top: .5em;
+}
+
+
+.ismtlogo {
+  height: 1.5em;
+  width: 4em;
+  margin-right: 2em;
+}
+
+.nacio  {
+margin-right: 1em;
+margin-top: .5em;
+}
+/* Footer */
+
+}
+/* media query para dispositiovs móveis */
+@media screen and (max-width:760px) {
+
+    .iconhamburguer {
+        height: 2em;
+        height: 2em;
+        overflow: auto;
+        opacity: 0.7;
+    }
+    ul {
+        position:static;
+        display:none;
+    }
+
+    li {
+        margin-bottom:1px;
+    }
+
+    ul li, li a {
+        width:100%;
+    }
+
+    .open-menu {
+        display:block;
+    }
+}
+
+}
